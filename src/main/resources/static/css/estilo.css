@@ -1,0 +1,17 @@
+#container{
+    display: grid;
+    align-items: center;
+    grid-template-rows: auto;
+    grid-template-areas: "cont";
+}
+#container-meio {
+  height: calc(100vh - 176px);
+  display: grid;
+  align-items: center;
+  grid-template-rows: auto;
+  grid-template-areas: "cont";
+}
+#container-center {
+    grid-area: cont;
+}
+
