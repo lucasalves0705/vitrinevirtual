@@ -13,17 +13,14 @@ public class Ramo extends AbstractEntity<Integer>{
 	@ManyToMany(mappedBy = "ramos")
     private List<Empresa> empresas;
 
-	@Column(name="secao")
-	private char secao;
+	@Column(name="codigo")
+	private int codigo;
 
-	@Column(name="denominacao")
-	private String denominacao;
+	@Column(name="descricao")
+	private String descricao;
 	
-	@Column(name="divisao")
-	private int divisao;
+	
 
-	
-	//Get e Set
 	public List<Empresa> getEmpresas() {
 		return empresas;
 	}
@@ -32,29 +29,20 @@ public class Ramo extends AbstractEntity<Integer>{
 		this.empresas = empresas;
 	}
 
-	public char getSecao() {
-		return secao;
+	public int getCodigo() {
+		return codigo;
 	}
 
-	public void setSecao(char secao) {
-		this.secao = secao;
+	public void setCodigo(int codigo) {
+		this.codigo = codigo;
 	}
 
-	public String getDenominacao() {
-		return denominacao;
+	public String getDescricao() {
+		return descricao;
 	}
 
-	public void setDenominacao(String denominacao) {
-		this.denominacao = denominacao;
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
 	}
-
-	public int getDivisao() {
-		return divisao;
-	}
-
-	public void setDivisao(int divisao) {
-		this.divisao = divisao;
-	}
-
-	
+		
 }

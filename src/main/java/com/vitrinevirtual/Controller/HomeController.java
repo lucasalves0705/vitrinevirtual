@@ -7,7 +7,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.vitrinevirtual.Entidades.Empresa;
 import com.vitrinevirtual.Entidades.Usuario;
+import com.vitrinevirtual.dao.EmpresaDao;
 import com.vitrinevirtual.dao.UsuarioDao;
 
 @Controller
@@ -17,9 +19,13 @@ public class HomeController {
 	@Autowired
 	UsuarioDao dao;
 	
+	@Autowired
+	EmpresaDao empresadao;
+	
 	@GetMapping("/")
-	public String home() {
-		return "/empresa/index";
+	public String home(ModelMap model) {
+		model.addAttribute("empresas", empresadao.findAll());
+		return "/home/site";
 	}
 	
 	@GetMapping("/login")
