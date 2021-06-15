@@ -19,10 +19,11 @@ import com.vitrinevirtual.dao.EmpresaDao;
 @RequestMapping("/empresa")
 public class EmpresaController {
 	@Autowired
-	EmpresaDao dao;
+	EmpresaDao empresadao;
 
 	@GetMapping("/index")
-	public String index() {
+	public String home(ModelMap model) {
+		model.addAttribute("empresas", empresadao.findAll());
 		return "/empresa/index";
 	}
 	
@@ -35,9 +36,9 @@ public class EmpresaController {
 	@PostMapping("/salvar")
 	public void salvar(@ModelAttribute("empresa") Empresa obj, HttpServletResponse response) throws IOException {
 		if(obj.getId() == null)
-			dao.save(obj);
+			empresadao.save(obj);
 		else
-			dao.update(obj);
+			empresadao.update(obj);
 		response.sendRedirect("/empresa/index");
 	}
 }

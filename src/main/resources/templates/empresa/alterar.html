@@ -16,7 +16,7 @@
         <div class="row justify-content-center">
             <div class="col-md-6 border rounded my-5" id="container-center">
                 <div class="text-center py-2">
-                    <h3>Crie empresa</h3>
+                    <h3>Editar empresa</h3>
                 </div>
                 <div class="row justify-content-center">
                     <div class="col-md-10">
@@ -53,8 +53,8 @@
                             </div>                            
                            	<label for="email" class="px-2 mt-3">Email:</label>
                             <input type="text" id="email" class="form-control" placeholder="Email@empresa.com.br" th:field="*{email}">
-                            <label for="facebook" class="px-2 mt-3">Facebook::</label>
-                            <input type="text" id="facebook" class="form-control" placeholder="Facebook.com/Empresa" th:field="*{facebook}">
+                            <label for="facebook" class="px-2 mt-3">Facebook:</label>
+                            <input type="text" id="facebook" class="form-control" placeholder="Facebook.com/Empresa" th:text="${empresa.facebook}>
                             <label for="instagram" class="px-2 mt-3">Instagram:</label>
                             <input type="text" id="instagram" class="form-control" placeholder="@Empresa" th:field="*{instagram}">
                             <div class="text-center bg-light d-none mt-3" id="message-error">
