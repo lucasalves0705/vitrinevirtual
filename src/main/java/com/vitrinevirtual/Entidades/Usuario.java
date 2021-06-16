@@ -1,12 +1,14 @@
 package com.vitrinevirtual.Entidades;
 
-import java.time.LocalDate;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+
 
 @Entity
 @Table(name="usuario")
@@ -14,6 +16,9 @@ public class Usuario extends AbstractEntity <Integer>{
 	@ManyToOne
     @JoinColumn(name = "id_tipouser")
     private TipoUsuario id_tipouser;
+	
+	@ManyToMany(mappedBy = "usuarios")
+    private List<Empresa> empresas;
 	
 	@Column(name="nome")
 	private String nome;
