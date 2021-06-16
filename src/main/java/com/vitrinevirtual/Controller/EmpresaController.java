@@ -27,6 +27,12 @@ public class EmpresaController {
 		return "/empresa/index";
 	}
 	
+	@GetMapping("/exibir")
+	public String exibir(ModelMap model, int id) {
+		model.addAttribute("empresas", empresadao.findById(id));
+		return "/empresa/exibir";
+	}
+	
 	@GetMapping("/cadastro")
 	public String cadastro(ModelMap model) {
 		model.addAttribute("empresa", new Empresa());
