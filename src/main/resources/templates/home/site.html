@@ -24,12 +24,12 @@
 			<div class="row justify-content-center mt-5 pt-3 px-3 border card-empresa">
 				<div class=col-12>
 					<div class="row">
-						<h3 class="col-8 d-inline"><a href="/empresa/cadastro" class="text-dark text" th:text="${empresa.nome}">Empresa 1</a></h3>
-						<span class="col-4 d-inline float-right text-right pt-2">18 - 3366-0000</span>
+						<h3 class="col-8 d-inline"><a href="/empresa/cadastro" class="text-dark text" th:text="${empresa.nome}"></a></h3>
+						<span class="col-4 d-inline float-right text-right pt-2" th:text="${empresa.contato}"></span>
 					</div>
 					<div class="row">
-						<p class="col-8 d-inline pt-2">Descricao</p>
-						<p class="col-4 d-inline float-right text-right pt-2">Joaquim Marques Guimaro - 269 - Santa cruz</p>
+						<p class="col-8 d-inline pt-2" th:text="${empresa.descricao}">Descricao</p>
+						<p class="col-4 d-inline float-right text-right pt-2" th:text="${empresa.horario_inicio}"></p>
 					</div>
 				</div>
 			</div>

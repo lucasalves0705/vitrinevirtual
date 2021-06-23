@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="pt-br" layout:decorate="~{layout}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Registrar-se</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/estilo.css">
+</head>
+<body>
+
+<section layout:fragment="conteudo">
+    <div class="container" id="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6 border rounded my-5" id="container-center">
+                <div class="text-center py-2">
+                    <h3>Lista de Ramos</h3>
+                </div>
+                <div class="row justify-content-center p-2">
+                
+                <div class="px-2 mx-1 mb-2 border  bg-secondary">
+                	<a href="/ramo/cadastro" class="m-0 text-white">Novo</a>
+                </div>
+                
+                <table class="table">
+					<thead>
+				   		<tr>
+				    		<th scope="col">#</th>
+				    		<th scope="col">Código</th>
+				      		<th scope="col">Descição</th>
+				      		<th scope="col">Editar</th>
+						</tr>
+					</thead>
+                
+                	<th:block th:each="ramo : ${ramos}">
+
+						<tbody>
+					    	<tr>
+					    		<th scope="row" th:text="${ramo.id}"></th>
+					      		<td th:text="${ramo.codigo}"></td>
+					      		<td th:text="${ramo.descricao}"></td>
+					     		<td><a th:href="@{/ramo/{id}/alterar/(id=${ramo.id})}" class="m-0 text-dark text-">Editar</a></td>
+					    	</tr>
+						</tbody>
+                  
+                	</th:block>
+                
+				</table> 
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+</body>
+</html>

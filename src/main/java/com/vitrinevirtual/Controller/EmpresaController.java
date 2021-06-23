@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.vitrinevirtual.Entidades.Empresa;
 import com.vitrinevirtual.dao.EmpresaDao;
-import com.vitrinevirtual.dao.EmpresaRamoDao;
+import com.vitrinevirtual.dao.RamoDao;
 
 @Controller
 @RequestMapping("/empresa")
@@ -25,7 +25,7 @@ public class EmpresaController {
 	EmpresaDao empresadao;
 	
 	@Autowired
-	EmpresaRamoDao empresaramodao;
+	RamoDao empresaramodao;
 
 	@GetMapping("/index")
 	public String home(ModelMap model) {
@@ -54,10 +54,10 @@ public class EmpresaController {
 		response.sendRedirect("/empresa/index");
 	}
 	
-	@GetMapping("/{id}/excluir")
+	/*@GetMapping("/{id}/excluir")
 	public void excluir(@PathVariable("id") int id, ModelMap model, HttpServletResponse response) throws IOException {	
 		empresaramodao.deletarPorEmpresa(id);
 		empresadao.delete(id);
 		response.sendRedirect("/empresa/index");
-	}
+	}*/
 }

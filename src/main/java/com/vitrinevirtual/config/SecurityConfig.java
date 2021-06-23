@@ -33,8 +33,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 			.antMatchers("/produto/form").hasAuthority("MANAGER")
 			.antMatchers("/empresa/exibir").hasAuthority("MANAGER")
 			.antMatchers("/produto/form").hasAuthority("MANAGER")
+			.antMatchers("/ramo/cadastro").hasAuthority("MANAGER")
+			.antMatchers("/ramo/alterar").hasAuthority("MANAGER")
             .antMatchers("/empresa/index").hasAnyAuthority("MANAGER", "USER")
             .antMatchers("/home/**").hasAnyAuthority("MANAGER", "USER")
+            .antMatchers("/ramo/index").hasAnyAuthority("MANAGER", "USER")
 			
 			.anyRequest().authenticated()
 			.and() 
